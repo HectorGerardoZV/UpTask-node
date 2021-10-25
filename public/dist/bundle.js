@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://uptask-me/./public/js/app.js?");
+eval("document.addEventListener(\"DOMContentLoaded\", function () {});\n\n//# sourceURL=webpack://uptask-me/./public/js/app.js?");
 
 /***/ })
 

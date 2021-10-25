@@ -78,6 +78,9 @@
 .formCard__options a:hover{
     color: var(--importantColor);    
 }
+.single{
+    justify-content: center;
+}
 
 /*Responsive*/
 
