@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        include components/head
+    body
+        div.access
+            form(action="" method = "POST")
+                fieldset.formCard 
+                    div.formCard__img
+                        img(src="/img/Logo.svg", alt="")
+                    p.titleForm Log In
+                    if inputs 
+                        each input in inputs 
+                            div.input
+                                input(type=`${input.type}` placeholder = `${input.placeHolder}`)
+                                label=input.label
+
+                        div.input-submit 
+                            input(type="submit" value= "Login")  

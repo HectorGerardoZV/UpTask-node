@@ -1,0 +1,54 @@
+.access{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--headingColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formCard {
+    background-color: var(--whiteColor);
+    border: none;
+    box-shadow: var(--shadow);
+    padding: 3rem  6rem;
+    width: 50rem;
+}
+.formCard__img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.titleForm{
+    font-size: 3rem;
+    color: var(--importantColor);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+}
+.input input{
+    width: 100%;
+    border: none;
+    border: 3px solid var(--headingColor);
+    transition: .3s ease;
+    padding: 1rem;
+    color: var(--importantColor);
+}
+.input input:focus{
+    outline: none;
+    border-color: var(--importantColor);
+}
+.input input::placeholder{
+    color:var(--placeHolderColor);
+    
+}
+.input label{
+    color: var(--headingColor);
+    font-size: 2rem;
+}
+

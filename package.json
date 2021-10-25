@@ -1,0 +1,36 @@
+{
+  "name": "uptask-me",
+  "version": "1.0.0",
+  "description": "Uptask project by Hector Zapata",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "watch": "webpack --watch --mode development",
+    "start": "concurrently \"npm run dev \" \"npm run watch\" "
+  },
+  "keywords": [
+    "NodeJS",
+    "Js",
+    "Css",
+    "Pug",
+    "WebPack",
+    "Npm"
+  ],
+  "dependencies": {
+    "axios": "^0.24.0",
+    "concurrently": "^6.3.0",
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "sequelize": "^6.8.0"
+  },
+  "author": "Hector Zapata",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.14",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

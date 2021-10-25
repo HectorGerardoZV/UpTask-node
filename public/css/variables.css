@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&display=swap');
+
+:root{
+    /*Fonst*/
+    --mainFont: 'Anton', sans-serif;
+    --taskFont: 'Maven Pro', sans-serif;
+    /*Colors*/
+    --textColor: #293241;
+    --headingColor: #3D5A80;
+    --importantColor: #EE6C4D;
+    --taskColor: #ECFEFF;
+    --dangerColor: #E10E0E;
+    --successColor: #04D600; 
+    --whiteColor: #FFFF;
+    --balckColor: #0000;
+    --placeHolderColor: #3d5a8070;
+    /*Colors Hover*/
+    --importantHoverColor: #B65842;
+    --dangerHoverColor: #B01D1D;
+    --successHoverColor: #039800;
+
+    /*Shadows*/
+    --shadow: 100px 100px 80px rgba(0, 0, 0, 0.08), 46.23px 46.233px 36.9864px rgba(0, 0, 0, 0.059334), 26.45px 26.4535px 21.1628px rgba(0, 0, 0, 0.0501425), 16.06px 16.0571px 12.8457px rgba(0, 0, 0, 0.0431959), 9.68px 9.67509px 7.74008px rgba(0, 0, 0, 0.0368041), 5.39px 5.38772px 4.31018px rgba(0, 0, 0, 0.0298575), 2.32px 2.31722px 1.85378px rgba(0, 0, 0, 0.020666);
+
+    /*Separations*/
+    --section: 5rem;
+
+    
+    
+    
+
+    
+
+
+}
