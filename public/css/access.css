@@ -35,7 +35,7 @@
     width: 100%;
     border: none;
     border: 3px solid var(--headingColor);
-    transition: .3s ease;
+    transition: .2s ease;
     padding: 1rem;
     color: var(--importantColor);
 }
@@ -51,4 +51,30 @@
     color: var(--headingColor);
     font-size: 2rem;
 }
-
+.input-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.input-submit input{
+   width: 100%;
+}
+.formCard__options{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.formCard__options img{
+   width: 2rem;
+}
+.formCard__options a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: var(--headingColor);   
+    transition: .2s ease; 
+}
+.formCard__options a:hover{
+    color: var(--importantColor);    
+}

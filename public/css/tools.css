@@ -1,0 +1,29 @@
+.btn{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    color: var(--whiteColor);
+    font-size: 2rem;
+}
+.btn-action{
+    background-color: var(--importantColor);
+    transition: .3s ease;
+}
+.btn-acept{
+    background-color: var(--headingColor);
+    transition: .3s ease;
+}
+.btn-danger{
+    background-color: var(--dangerColor);
+    transition: .3s ease;
+}
+.btn-action:hover{
+    background-color: var(--importantHoverColor);
+}
+.btn-acept:hover{
+    background-color: var(--headingHoverColor);
+}
+.btn-danger:hover{
+    background-color: var(--dangerHoverColor);
+}
