@@ -78,3 +78,19 @@
 .formCard__options a:hover{
     color: var(--importantColor);    
 }
+
+/*Responsive*/
+
+@media(max-width: 500px) {
+    .formCard {
+        width: 30rem;
+        padding: 1rem 1rem;
+    }
+    .formCard__options{
+       flex-direction: column;
+       align-items: center;
+       gap: 1rem;
+    }
+    
+}
+
