@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+       include components/head
+    body 
+        section.app 
+            section.navegation
+                div.navegation__logo 
+                    a(href="/" id="home")
+                        img(src="/img/Home.svg", alt="")
+
+                div.btn.btn-action.btn-icon.newProject
+                    p New Project
+                    a(href="/")
+                        img(src="/img/Add.svg", alt="")
+                div.separator
+
+                div.projects 
+                    p Projects
+                    if(projects)
+                        ul 
+                            each project in projects
+                                li
+                                    project.name 
+
+
+
+
+
+            section.main
+                div.main__logo
+                    img(src="/img/Logo.svg", alt="")
+        

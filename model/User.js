@@ -8,15 +8,19 @@ const Users = database.define("users",{
         primaryKey: true,
         autoIncrement: true  
     },
+    userName:{
+        type: Sequelize.STRING(30),
+        allowNull: false
+    },
     email: {
         type: Sequelize.STRING(100),
         allowNull: false,
         validate: {
             isEmail:{
-                msg:"Agrega un correo valido"
+                msg:"Add a valid email"
             },
             notEmpty:{
-                msg:"El email es obligatorio"
+                msg:"Email is required"
             }
         },
         unique:{
@@ -29,7 +33,7 @@ const Users = database.define("users",{
         allowNull: false,
         validate: {
             notEmpty:{
-                msg:"La contraseña es obligatoria"
+                msg:"Password is required"
             }
         }
     },
@@ -46,7 +50,7 @@ const Users = database.define("users",{
 );
 
 Users.prototype.verifyPassword = function(password){
-    return bcrypt.compareSync(password, this.password);
+    return bcryptNode.compareSync(password, this.password);
 } 
 
 Users.hasMany(Projects)

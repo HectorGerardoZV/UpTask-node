@@ -1,3 +1,5 @@
+const User = require("../model/User");
+
 exports.loginForm = (req, res, next)=>{
 
     const inputs = [
@@ -63,4 +65,20 @@ exports.resetPasswordForm = (req, res, next)=>{
         inputs
 
     })
+}
+
+exports.validateLogin = async(req,res,next)=>{
+    try {
+        const {userName, password } = req.body;
+        const user = await User.findOne({where:{ userName:userName }});
+        const exist = await user.verifyPassword(password);
+        if(exist){
+        res.redirect("/");
+        }
+        res.redirect("/login");
+
+   
+    } catch (error) {
+        next();
+    }
 }

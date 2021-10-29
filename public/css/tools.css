@@ -27,3 +27,8 @@
 .btn-danger:hover{
     background-color: var(--dangerHoverColor);
 }
+.btn-icon{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
