@@ -1,15 +1,13 @@
 const Projects = require("../model/Projects");
 
 exports.homePage = async (req, res, next)=>{
-    const userId =  res.locals.user.id;
+    const userId = res.locals.user.id;
     try {
-        const projects  = await Projects.findAll();
-
-        console.log(projects.lenght);
+        const projects  = await Projects.findAll({where: {userId: userId}});       
         res.render("home",{
             namePage: "Home",
-            projects,
-            userId
+            projects
+            
         })
     } catch (error) {
         

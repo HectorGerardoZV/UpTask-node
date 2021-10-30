@@ -22,7 +22,8 @@ html(lang="en")
                         ul 
                             each project in projects
                                 li
-                                    project.name 
+                                    a(href=`/project/${project.url}`)=project.name 
+                                    
 
 
 
