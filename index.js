@@ -4,6 +4,10 @@ const path = require("path");
 const app = express();
 const database = require("./config/database");
 const bodyParser = require("body-parser");
+const session = require("express-session");
+const passport = require("./config/passport");
+const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
 
 //Ading models
 require("./model/User");
@@ -27,7 +31,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Enablig the views files
 app.set("views", path.join(__dirname, "./view"));
+app.use(flash());
+app.use(cookieParser());
 
+//Agregando sessiones
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false
+
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//User asignation
+app.use((req, res, next) => {
+    res.locals.messages = req.flash();
+    res.locals.user = {...req.user}||null;
+    next();
+});
 
 
 

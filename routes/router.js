@@ -9,13 +9,28 @@ const projectsController = require("../controller/projectsController");
 
 module.exports = function(){
     //Account rots
+    //Login routs
     router.get("/login", autController.loginForm);
     router.post("/login", autController.validateLogin);
+    //Logout routs
+    router.get("/logout", autController.logout);
+    //Signup routs
     router.get("/signup", autController.signupForm);
     router.post("/signup",usersController.createAccount );
+
+    //Reset password routs
     router.get("/resetpassword", autController.resetPasswordForm);
     //home
-    router.get("/",projectsController.homePage );
+    router.get("/",
+        autController.isAuthenticated,
+        projectsController.homePage 
+    );
+    router.get("/newProject",
+    autController.isAuthenticated,
+    projectsController.newProjectForm );
+    router.post("/newProject",
+    autController.isAuthenticated,
+    projectsController.newProject );
     
 
 

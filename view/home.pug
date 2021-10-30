@@ -9,9 +9,10 @@ html(lang="en")
                     a(href="/" id="home")
                         img(src="/img/Home.svg", alt="")
 
-                div.btn.btn-action.btn-icon.newProject
-                    p New Project
-                    a(href="/")
+                div.btn.btn-action.newProject
+                    
+                    a(href="/newProject").btn-icon
+                        p New Project
                         img(src="/img/Add.svg", alt="")
                 div.separator
 
@@ -29,5 +30,12 @@ html(lang="en")
 
             section.main
                 div.main__logo
+                    div
                     img(src="/img/Logo.svg", alt="")
+
+                    a(href="/logout").logout Logout 
+                        img(src="/img/LogOut-dark.svg", alt="") 
+                       
+                div.main__content
+                    block content
         

@@ -1,7 +1,8 @@
-const User = require("../model/User");
+const passport  = require("passport");
 
 exports.loginForm = (req, res, next)=>{
 
+    const {error} = res.locals.messages;
     const inputs = [
         {
             label : "User Name",
@@ -18,7 +19,8 @@ exports.loginForm = (req, res, next)=>{
     ];
     res.render("login",{
         namePage: "UpTask-Login",
-        inputs
+        inputs,
+        error
 
     })
 }
@@ -67,18 +69,24 @@ exports.resetPasswordForm = (req, res, next)=>{
     })
 }
 
-exports.validateLogin = async(req,res,next)=>{
-    try {
-        const {userName, password } = req.body;
-        const user = await User.findOne({where:{ userName:userName }});
-        const exist = await user.verifyPassword(password);
-        if(exist){
-        res.redirect("/");
-        }
-        res.redirect("/login");
+exports.validateLogin =passport.authenticate("local",{
+    successRedirect:"/",
+    failureRedirect:"/login",
+    failureFlash: true,
+    badRequestMessage: "Fill in the fields"
+});
 
-   
-    } catch (error) {
-        next();
+exports.isAuthenticated = (req, res, next)=>{
+    if(req.isAuthenticated()){
+        return next();
     }
+    else{
+        return res.redirect("/login");
+    }
+}
+
+exports.logout = (req, res)=>{
+    req.session.destroy(()=>{
+        res.redirect("/login");
+    })
 }

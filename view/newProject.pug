@@ -1,0 +1,15 @@
+extends home
+
+block content 
+    div.content__title
+        h2 Creating Project
+
+    div.project__card
+        form(action="/newProject", method="POST")
+            fieldset.card__layout 
+                div.card__input
+                    input(type="text" id = "nameProject" placeholder= "Project Name" name = "name")
+                    label(for="nameProject") Project Name
+                div.card__submit
+                    input(type="submit" value="Create").btn.btn-action 
+
