@@ -17,12 +17,12 @@ html(lang="en")
                 div.separator
 
                 div.projects 
-                    p Projects
+                    p - Projects -
                     if(projects)
-                        ul 
+                        ul.project__style 
                             each project in projects
                                 li
-                                    a(href=`/project/${project.url}`)=project.name 
+                                    a(href=`/projectView/${project.url}`)=project.name 
                                     
 
 

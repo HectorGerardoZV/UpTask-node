@@ -25,13 +25,23 @@ module.exports = function(){
         autController.isAuthenticated,
         projectsController.homePage 
     );
+    //New Project
     router.get("/newProject",
-    autController.isAuthenticated,
-    projectsController.newProjectForm );
+        autController.isAuthenticated,
+        projectsController.newProjectForm 
+    );
     router.post("/newProject",
-    autController.isAuthenticated,
-    projectsController.newProject );
-    
+        autController.isAuthenticated,
+        projectsController.newProject 
+    );
+    //Project View
+    router.get("/projectView/:url",
+        autController.isAuthenticated,
+        projectsController.projectView
+    );
+
+    router.get("/editProject/:url", projectsController.editProjectForm)
+    router.post("/editProject/:url", projectsController.editProject)
 
 
     return router;

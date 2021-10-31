@@ -2,14 +2,26 @@ extends home
 
 block content 
     div.content__title
-        h2 Creating Project
+        h2=action
+            if(action==="Editing Project")
+                
+                span.projectName  - #{project.name}
 
     div.project__card
-        form(action="/newProject", method="POST")
+        form(action="", method="POST")
             fieldset.card__layout 
-                div.card__input
-                    input(type="text" id = "nameProject" placeholder= "Project Name" name = "name")
-                    label(for="nameProject") Project Name
-                div.card__submit
-                    input(type="submit" value="Create").btn.btn-action 
+                
+                if project
+                    div.card__input
+                        input(type="text" id = "nameProject" placeholder= "Project Name" name = "name" value = `${project.name}`)
+                        label(for="nameProject") Project Name
+                    div.card__submit
+                        input(type="submit" value="Save").btn.btn-action 
+                else
+                    div.card__input
+                        input(type="text" id = "nameProject" placeholder= "Project Name" name = "name")
+                        label(for="nameProject") Project Name
+                    div.card__submit
+                        input(type="submit" value="Add").btn.btn-action 
+
 

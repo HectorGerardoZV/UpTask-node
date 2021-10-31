@@ -65,3 +65,16 @@
 .logout img{
   width: 3rem;
 }
+.project__style{
+    margin-top: 3rem;
+}
+.project__style li a{
+    color: var(--whiteColor);
+}
+
+.project__style li{
+  transition: .1s ease;
+}
+.project__style li:hover{
+  background-color: var(--headingColor);
+}

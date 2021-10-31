@@ -13,7 +13,7 @@ margin-bottom: 4rem;
     margin: 0 auto;
 }
 .card__layout{
-    padding: 5rem 5rem;
+    padding: 3rem;
     border: none;
     background-color: var(--headingColor);
 }
@@ -22,11 +22,11 @@ margin-bottom: 4rem;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 .card__input input{
     width: 90%;
-    padding: 1.5rem;
+    padding: 1rem;
     border: none;
     border: 4px solid transparent;
     transition: .2s ease;
@@ -53,4 +53,19 @@ margin-bottom: 4rem;
 }
 .card__submit input{
     font-size: 2.5rem ;
+}
+
+.projectName{
+    color: var(--headingColor);
+}
+
+
+.options{
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    
 }

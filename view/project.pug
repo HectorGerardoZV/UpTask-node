@@ -1,0 +1,22 @@
+extends home
+block content 
+    div.content__title
+        h2 Project - 
+            span.projectName #{project.name}
+    div.project__card
+        form(action="/newTask", method="POST")
+            fieldset.card__layout 
+                div.card__input
+                    input(type="text" id = "task" placeholder= "Task Name" name = "task")
+                    label(for="task") Task Name
+                div.card__submit
+                    input(type="submit" value="Add Task").btn.btn-action 
+    
+    div.options
+        div 
+            a(href=`/editProject/${project.url}` class="btn btn-acept") Edit Project  
+                img(src="/img/Edit.svg", alt="")
+
+        div
+            a(href=`/deleteProject/${project.url}` class="btn btn-danger") Delete Project  
+                img(src="/img/Edit.svg", alt="")
