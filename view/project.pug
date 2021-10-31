@@ -4,13 +4,40 @@ block content
         h2 Project - 
             span.projectName #{project.name}
     div.project__card
-        form(action="/newTask", method="POST")
+        form(action=`/newTask/${project.url}`, method="POST")
             fieldset.card__layout 
                 div.card__input
-                    input(type="text" id = "task" placeholder= "Task Name" name = "task")
+                    input(type="text" id = "task" placeholder= "Task Name" name = "name")
                     label(for="task") Task Name
                 div.card__submit
                     input(type="submit" value="Add Task").btn.btn-action 
+    
+    div.tasks
+        if(tasks.length===0)
+            h3.titleTaskSection No homeworks
+        else 
+            ul.tasks-list(data-urlProject = project.url)
+                each task in tasks 
+                    li.task 
+                        p=task.name
+                        div.task-opitons(data-idTask=task.id)
+                            if(task.state==0)
+                                
+                                img(src="/img/Success-no.svg", alt="" id="change" data-idTask=`${task.id}`).option-task.no
+                            else
+                                
+                                img(src="/img/Success-yes.svg", alt="" id= "change" data-idTask=`${task.id}`).option-task.yes
+                            
+                            img(src="/img/Delete-red.svg", alt="" id="delete" data-idTask=`${task.id}`).option-task
+    if(tasks.length>0)
+        div.advance
+                h3.titleTaskSection Project Progress
+                div#progress-bar.progress-bar
+                    div#percentage.percentage 
+
+
+        
+        
     
     div.options
         div 
@@ -18,5 +45,5 @@ block content
                 img(src="/img/Edit.svg", alt="")
 
         div
-            button#deleteProject(type="button" data-project-url = project.url class= "btn btn-danger") Delete  
-                img(src="/img/Edit.svg", alt="")
+            button#deleteProject(type="button" data-project-url = project.url class= "btn btn-danger") Delete Project 
+                img(src="/img/Delete.svg", alt="")

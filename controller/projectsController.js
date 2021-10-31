@@ -1,4 +1,5 @@
 const Projects = require("../model/Projects");
+const Tasks = require("../model/Tasks");
 
 exports.homePage = async (req, res, next)=>{
     const userId = res.locals.user.id;
@@ -48,10 +49,15 @@ exports.projectView = async (req, res)=>{
         const projectsPromise  =  Projects.findAll({where: {userId: userId}});
 
         const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
+
+        const tasks = await Tasks.findAll({where: {projectId:project.id}});
+
+
         res.render("project",{
             namePage: "Project",
             project,
-            projects
+            projects,
+            tasks
         })
     } catch (error) {
         
