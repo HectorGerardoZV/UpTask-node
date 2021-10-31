@@ -18,5 +18,5 @@ block content
                 img(src="/img/Edit.svg", alt="")
 
         div
-            a(href=`/deleteProject/${project.url}` class="btn btn-danger") Delete Project  
+            button#deleteProject(type="button" data-project-url = project.url class= "btn btn-danger") Delete  
                 img(src="/img/Edit.svg", alt="")

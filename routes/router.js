@@ -42,6 +42,7 @@ module.exports = function(){
 
     router.get("/editProject/:url", projectsController.editProjectForm)
     router.post("/editProject/:url", projectsController.editProject)
+    router.delete("/deleteProject/:url", projectsController.deleteProject)
 
 
     return router;

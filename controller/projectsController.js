@@ -93,3 +93,16 @@ exports.editProject = async (req, res)=>{
         
     }
 }
+exports.deleteProject = async (req, res, next)=>{
+    try {
+        const url = req.params.url;
+        const response = await Projects.destroy({ where: { url } });
+
+        if(!response){
+            return next();
+        }
+        res.status(200).send("");
+    } catch (error) {
+        next();
+    }
+}
