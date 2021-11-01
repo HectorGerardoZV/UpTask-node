@@ -67,6 +67,7 @@ module.exports = function(){
         autController.isAuthenticated,
         tasksController.updateTask
     )
+    
 
     return router;
 }
