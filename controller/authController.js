@@ -3,6 +3,7 @@ const passport  = require("passport");
 exports.loginForm = (req, res, next)=>{
 
     const {error} = res.locals.messages;
+    
     const inputs = [
         {
             label : "User Name",
@@ -20,7 +21,7 @@ exports.loginForm = (req, res, next)=>{
     res.render("login",{
         namePage: "UpTask-Login",
         inputs,
-        error
+        errors:error
 
     })
 }

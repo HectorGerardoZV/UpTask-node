@@ -33,3 +33,22 @@
     align-items: center;
     color: var(--whiteColor);
 }
+.errors{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.error{
+    padding: 1rem;
+    width: 60%;
+    margin: 0 auto;
+    background-color: aliceblue;
+    text-align: center;
+    background: #F7CDCD;
+    border: 3px solid #F56363;
+    color: #f14d4d;
+
+}

@@ -2,25 +2,32 @@ doctype html
 html(lang="en")
     head
         include components/head
-    body
+    body.backHtmlAcces
         div.access
-            form(action="" method = "POST")
-                fieldset.formCard 
-                    div.formCard__img
-                        img(src="/img/Logo.svg", alt="")
-                    p.titleForm Log In
-                    if inputs 
-                        each input in inputs 
-                            div.input
-                                input(type=`${input.type}` placeholder = `${input.placeHolder}` id=`${input.input}` name=`${input.input}`)
-                                label=input.label
+            div
+                if errors
+                    div.errors
+                        each error in errors
+                            p.error #{error} 
+                        
 
-                        div.input-submit 
-                            input(type="submit" value= "Log In").btn.btn-action  
-                        div.formCard__options 
-                            a(href="/signup")
-                                img(src="/img/LeftArrow.svg", alt="")
-                                p Create Account 
-                            a(href="/resetpassword")
-                                p Reset Password 
-                                img(src="/img/RightArrow.svg", alt="")
+                form(action="" method = "POST")
+                    fieldset.formCard 
+                        div.formCard__img
+                            img(src="/img/Logo.svg", alt="")
+                        p.titleForm Log In
+                        if inputs 
+                            each input in inputs 
+                                div.input
+                                    input(type=`${input.type}` placeholder = `${input.placeHolder}` id=`${input.input}` name=`${input.input}`)
+                                    label=input.label
+
+                            div.input-submit 
+                                input(type="submit" value= "Log In").btn.btn-action  
+                            div.formCard__options 
+                                a(href="/signup")
+                                    img(src="/img/LeftArrow.svg", alt="")
+                                    p Create Account 
+                                a(href="/resetpassword")
+                                    p Reset Password 
+                                    img(src="/img/RightArrow.svg", alt="")
