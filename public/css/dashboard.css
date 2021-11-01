@@ -1,10 +1,12 @@
 .app{
+  
     display: flex;
+    height: 100vh;
 }
 
 .navegation{
     background-color: var(--textColor);
-    width: 20rem;
+    width: 30rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,6 +39,9 @@
 }
 .main{
     width: 100vw;
+    flex: 1;
+    padding: 1rem;
+    overflow: scroll;
 }
 
 .projects{
