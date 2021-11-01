@@ -4,22 +4,27 @@ html(lang="en")
         include components/head
     body.backHtmlAcces
         div.access
-            form(action="/signup" method = "POST")
-                fieldset.formCard 
-                    div.formCard__img
-                        img(src="/img/Logo.svg", alt="")
-                    p.titleForm Sign Up
-                    if inputs 
-                        each input in inputs 
-                            div.input
-                                input(type=`${input.type}` placeholder = `${input.placeHolder}` id=`${input.input}` name=`${input.input}`)
-                                label=input.label
+            div
+                if errors
+                        div.errors
+                            each error in errors
+                                p.error #{error}
+                form(action="/signup" method = "POST")
+                    fieldset.formCard 
+                        div.formCard__img
+                            img(src="/img/Logo.svg", alt="")
+                        p.titleForm Sign Up
+                        if inputs 
+                            each input in inputs 
+                                div.input
+                                    input(type=`${input.type}` placeholder = `${input.placeHolder}` id=`${input.input}` name=`${input.input}`)
+                                    label=input.label
 
-                        div.input-submit 
-                            input(type="submit" value= "Sign Up").btn.btn-action  
-                        div.formCard__options.single 
-                            a(href="/login")
-                                p Back To Login
-                                img(src="/img/RightArrow.svg", alt="")
+                            div.input-submit 
+                                input(type="submit" value= "Sign Up").btn.btn-action  
+                            div.formCard__options.single 
+                                a(href="/login")
+                                    p Back To Login
+                                    img(src="/img/RightArrow.svg", alt="")
                                  
                             

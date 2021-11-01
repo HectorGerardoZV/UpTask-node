@@ -8,21 +8,25 @@ exports.addTask = async (req, res, next)=>{
         const {url} = req.params;
         const {name} = req.body;
         const project = await Projects.findOne({where:{url:url}});
-       const task = await Tasks.create({
-            name, 
-            projectId: project.id,
-            state: 0
-        })
-        if(!task){
-            return next();
+
+        let taskName = name.trim();
+        if(taskName){
+            const task = await Tasks.create({
+                name, 
+                projectId: project.id,
+                state: 0
+            })
+            if(!task){
+                return next();
+            }
+    
+           
+        }else{
+            req.flash("error", "The Task name is required");
+            
         }
-
         res.redirect(`/projectView/${url}`);
-
-
-
-        
-        
+     
     } catch (error) {
         
     }

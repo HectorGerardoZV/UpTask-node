@@ -27,6 +27,9 @@ exports.loginForm = (req, res, next)=>{
 }
 exports.signupForm = (req, res, next)=>{
 
+    
+    const {error} = res.locals.messages;
+    console.log(error);
     const inputs = [
         {
             label : "User Name",
@@ -49,7 +52,8 @@ exports.signupForm = (req, res, next)=>{
     ];
     res.render("signup",{
         namePage: "UpTask-Signup",
-        inputs
+        inputs,
+        errors: error
 
     })
 }

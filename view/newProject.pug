@@ -7,6 +7,11 @@ block content
                 
                 span.projectName  - #{project.name}
 
+    if errors 
+        div.errors
+            each error in errors 
+                p.error #{error}
+
     div.project__card
         form(action="", method="POST")
             fieldset.card__layout 

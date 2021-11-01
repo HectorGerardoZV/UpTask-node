@@ -3,6 +3,12 @@ block content
     div.content__title
         h2 Project - 
             span.projectName #{project.name}
+    
+
+    if errors 
+        div.errors
+            each error in errors 
+                p.error #{error}
     div.project__card
         form(action=`/newTask/${project.url}`, method="POST")
             fieldset.card__layout 
@@ -14,7 +20,7 @@ block content
     
     div.tasks
         if(tasks.length===0)
-            h3.titleTaskSection No homeworks
+            h3.titleTaskSection No Tasks
         else 
             ul.tasks-list(data-urlProject = project.url)
                 each task in tasks 
